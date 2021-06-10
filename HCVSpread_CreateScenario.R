@@ -13,7 +13,7 @@ create.overviewHCVspread <- function(directory,scen,length.side,sim,timesteps,pr
 	out <- data.frame(length.side,sim,timesteps,prob_infectCC,prob_infectDIFF,frac_HCV,prob_dieUI,prob_dieJ,prob_dieI,prob_infinf,max_init_nbr,init_exp_rate,trunc_time,media_change,prolif_time,perc_empty,coupling,r_dieV,runV,R0,prodRNA,Rcap,rate_exportRNA,rate_degradeRNA,E2_0,degr_e2)
 
 	names(out) <- c("length.side","sim","time","p_infectCC","p_infectDIFF","frac_HCV","p_dieUI","p_dieJ","p_dieI","p_infinf","max_initnbr","init_exprate","trunc_time","media_change","prolif_time","perc_empty","coupling","r_dieV","run_V","R0","prodRNA","Rcap","rate_exportRNA","rate_degradeRNA","E2_0","degr_e2")
-	write.table(out,paste0(directory,"/hcvCluster_overview_",scen,".csv"),sep=",")
+	write.table(out,paste0(directory,"/HCVspread_overview_",scen,".csv"),sep=",")
 	return(out)
 }
 
