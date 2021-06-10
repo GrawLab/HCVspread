@@ -22,7 +22,10 @@ The simulation environment is written in C++ and R Version 3.3.3, with no specif
 * **HCVspread_overview_*name*.csv:** File containing the individual parameters for each simulation run. The file is called by *HCVspread_rscript.R* to generate the parameter file *HCVspread_parameter.h*.
 * **HCVspread_PlotResults.R:** R-file containing the functions to plot the hexagonal grid based on the output files.
 
-Some of the paths within the scripts might have to be adapted to the specific user requirements. Output is provided as .csv-files with the different tables containing the following information:
+Some of the paths within the scripts might have to be adapted to the specific user requirements. 
+
+## Output
+Output is provided as .csv-files with the different tables containing the following information:
 
 * **HEPstat_*name*.csv:** Table with the numbers of each cell type at each time point specified for saving.
 * **HEPinf_*name*.csv:** Table with each line containing the Cell IDs of all infected cells at each time point specified for saving
