@@ -15,17 +15,19 @@ The model has been developed and implemented by Peter Kumberger and Frederik Gra
 The simulation environment is written in C++ and R Version 3.3.3, with no specific requirements with regard to R packages. There is no specific installation needed to run the simulations. Simulations are started in R with several processes running in C++ in the background. The following files build the structure of the code: 
 
 * **rand_generator.h:** File with functions for random number generation as used in the C++ files
-* **HCVspread_parameter.h:** File containing the parameters used to run the simulations. Will be automatically generated when running the simulations (*HCVspread_rscript.R*) out of the table *HCVspread_overview.csv*.
+* **HCVspread_parameter.h:** File containing the parameters used to run the simulations. Will be automatically generated when running the simulations (*HCVspread_rscript.R*) out of the table *HCVspread_overview_name.csv*.
 * **HCVspread_corefile.h:** File containing the core-functions of the simulation environment defining cell types and viral grid, as well as the main processes (e.g. cell proliferation, viral replication, cell infection by cell-free and cell-to-cell transmission, etc.). Calls the files *HCVspread_parameter.h* and *rand_generator.h*.
 * **HCVspread_mainfile.cc:** File containing the actual function to simulate viral spread as it is called from the R function. The function calls the file *HCVspread_corefile.h*.
 * **HCVspread_rscript.R:** Actual R-file calling the simulation function and running the simulation.
-* **HCVspread_overview.csv:** File containing the individual parameters for each simulation run. The file is called by *HCVspread_rscript.R* to generate the parameter file *HCVspread_parameter.h*.
+* **HCVspread_overview_*name*.csv:** File containing the individual parameters for each simulation run. The file is called by *HCVspread_rscript.R* to generate the parameter file *HCVspread_parameter.h*.
+* **HCVspread_PlotResults.R:** R-file containing the functions to plot the hexagonal grid based on the output files.
 
 Some of the paths within the scripts might have to be adapted to the specific user requirements. Output is provided as .csv-files with the different tables containing the following information:
 
-* **HEPstat_xx.csv:** Table with the numbers of each cell type at each time point specified for saving.
-* **HEPinf_xx.csv:** Table with each line containing the Cell IDs of all infected cells at each time point specified for saving
-* **HEPinfectious_xx.csv:** Table with each line containing the Cell IDs of all infectious cells at each time point specified for saving
-* **HEPInfectClusterType_xx.csv:**
-* **Empty_xx.csv:**
-* **VIRALGRID_xx.csv:**
+* **HEPstat_*name*.csv:** Table with the numbers of each cell type at each time point specified for saving.
+* **HEPinf_*name*.csv:** Table with each line containing the Cell IDs of all infected cells at each time point specified for saving
+* **HEPinfectious_*name*.csv:** Table with each line containing the Cell IDs of all infectious cells at each time point specified for saving
+* **HEPInfectClusterType_*name*.csv:** Table containing for each Cell ID the type of infection (cell-free or cell-to-cell) and the specific cluster (indicated by a cluster ID) that it belongs to at the end of the simulation.
+* **Empty_*name*.csv:** Table with each line containing the Cell IDs of all empty cell spots in the grid at each time point specified for saving.
+
+There are additional options to save the whole viral grid, intracellular RNA content etc that are disabled within the simulation scripts.
