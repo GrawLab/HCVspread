@@ -1,0 +1,2 @@
+"","filename","length.side","sim","time","p_infectCC","p_infectDIFF","frac_HCV","p_dieUI","p_dieJ","p_dieI","p_infinf","p_prolif","max_initnbr","init_exprate","trunc_time","media_change","prolif_time","perc_empty","coupling","r_dieV","run_V","R0","prodRNA","Rcap","rate_exportRNA","rate_degradeRNA","E2_0","degr_e2"
+"1","ExpA",90,1,14400,0.00147312336425686,1.10849044308994e-06,1,0,0,0,0.000696377481628572,0,25,0.001266667,1020,4320,1440,0.6,0.0208856450074985,0.001266667,1,80.07,0.004,77360,3.48e-05,0,10000,0.0312600754769505
