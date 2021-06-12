@@ -19,7 +19,7 @@ The simulation environment is written in C++ and R Version 3.3.3, with no specif
 * **HCVspread_corefile.h:** File containing the core-functions of the simulation environment defining cell types and viral grid, as well as the main processes (e.g. cell proliferation, viral replication, cell infection by cell-free and cell-to-cell transmission, etc.). Calls the files *HCVspread_parameter.h* and *rand_generator.h*.
 * **HCVspread_mainfile.cc:** File containing the actual function to simulate viral spread as it is called from the R function. The function calls the file *HCVspread_corefile.h*.
 * **HCVspread_rscript.R:** Actual R-file calling the simulation function and running the simulation.
-* **HCVspread_overview_*name*.csv:** File containing the individual parameters for each simulation run. The file is called by *HCVspread_rscript.R* to generate the parameter file *HCVspread_parameter.h*.
+* **HCVspread_overview_*name*.csv:** File containing the individual parameters for each simulation run. The file is called by *HCVspread_rscript.R* to generate the parameter file *HCVspread_parameter.h*. The provided files show single example files.
 * **HCVspread_PlotResults.R:** R-file containing the functions to plot the hexagonal grid based on the output files.
 
 Some of the paths within the scripts might have to be adapted to the specific user requirements. 
@@ -34,3 +34,14 @@ Output is provided as .csv-files with the different tables containing the follow
 * **Empty_*name*.csv:** Table with each line containing the Cell IDs of all empty cell spots in the grid at each time point specified for saving.
 
 There are additional options to save the whole viral grid, intracellular RNA content etc that are disabled within the simulation scripts.
+
+## Running the script
+The scripts can be run locally from an R-environment or (after adaptation) submitted on a high-performance computing system allowing the simultaneous assessment of various parameter combinations. The following commands should get your script running. You should create a folder with the name of your scenario and run R from this folder (or use the *setwd()*-function in R to specify the working directory. Assuming you want to run "ExpA" from the examples, then this would be:
+
+```
+source("HCVSpread_rscript.R")
+path.directory <- "path/to/your/directory/of/ExpA"
+Sim.prohep(path.directory,"ExpA")
+```
+When running the code you should be careful about which elements are saved, as simulations could result in large data frames containing the information of the grid at several timepoints. What should be saved and at which timepoints can be controlled within the individual files.
+
