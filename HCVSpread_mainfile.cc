@@ -26,7 +26,7 @@ using namespace std;
 
 // Include the corefile with all the main functions + parameters previously defined
 // (paths may have to be adapted)
-#include HCVSpread_corefile.h
+#include "HCVSpread_corefile.h"
 
 // ============================================
 
