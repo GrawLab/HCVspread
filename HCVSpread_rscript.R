@@ -46,7 +46,7 @@ Sim.prohep <- function(directory,scen){
   print(simu)
   
   # define the matrix for the global parametrs
-  globvar <- matrix(data=NA,nrow=8,ncol=1)
+  globvar <- matrix(data=NA,nrow=7,ncol=1)
   
   # write the filename(s) into the parameter file containing the global parameters (HEPstat,HEPinf,HEPinfectious,HEPdeath)
   globvar[1,1] <- paste0("ofstream outHEPstat(\"",paste0(directory,"/HEPstat_",scen,".csv"),"\", ios::out);")

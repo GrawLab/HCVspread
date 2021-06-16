@@ -221,7 +221,9 @@ for (i in 2:length(timespan)){
 hour.step <- seq(60,5760,60)
 #hour.step <- 14400
 name <- "name of scenario"
-LENGTH_SIDE <- 60
+path.data <- "path to data"
+path.figure <- "path to figure"
+LENGTH_SIDE <- 90
 simulation.plot <- plot.timeseries(path.data,path.figure,name,0,hour.step,LENGTH_SIDE,factor=60,unit=1)
 
 
